@@ -59,6 +59,11 @@ class Main extends hxd.App {
         if (Key.isDown(Key.MOUSE_LEFT)){
             tiler.add(Math.floor(mx/(tileSize*scale)), Math.floor(my/(tileSize*scale)));
         }
+        if (Key.isDown(Key.MOUSE_RIGHT)){
+            tiler.remove(Math.floor(mx/(tileSize*scale)), Math.floor(my/(tileSize*scale)));
+        }
+        
+
         // components["static"][0].x = 300;
 
         // if (Key.isDown(Key.LEFT)) componets["static"][0].x -= 10*dt;
@@ -73,6 +78,7 @@ class Main extends hxd.App {
         highlight.beginFill(0x00FF00, 0);
 		highlight.lineStyle(1, 0xFF00FF);
         if (Key.isDown(Key.MOUSE_LEFT)) highlight.lineStyle(1, 0xAA0000);
+        if (Key.isDown(Key.MOUSE_RIGHT)) highlight.lineStyle(1, 0x0000AA);
 		highlight.drawRect(0,0,tileSize*scale,tileSize*scale);
 		highlight.endFill();
 
